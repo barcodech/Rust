@@ -20,3 +20,23 @@ fn main() {
     println!("{}", dog1);
     println!("Jackky's String is {} letters long.", dog1.to_string().chars().count());
 }
+use std::fmt::Display;
+ 
+fn print_vec<T: Display>(input: &Vec<T>) {
+    for item in input {
+        print!("{} ", item);
+    }
+    println!();
+}
+ 
+fn main() {
+ 
+    let array_vec = Vec::from([1, 2, 3]);
+    print_vec(&array_vec);
+ 
+    let str_vec = Vec::from("string slide");
+    print_vec(&str_vec);
+ 
+    let string_vec = Vec::from("string".to_string());
+    print_vec(&string_vec);
+}
